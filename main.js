@@ -61,18 +61,15 @@ function randomNumber(min, max) {
 function isEven(number) {
     if ((number % 2) === 0) {
         return true
+    }else {
+        return false
     }
-    return false
 }
 
 bottoneNumeri.addEventListener('click', function() {
     let somma = parseInt(numeroUtente.value) + randomNumber(1, 5)
 
-    isEven(somma)
-    console.log(isEven)
-    if (isEven === true && even.checked ) {
-        risultatoNumeri.innerHTML = `Il tuo numero è: ${numeroUtente.value}. Il numero del computer è: ${somma - parseInt(numeroUtente.value)}. Hai vinto! La somma dei numeri è: ${somma}`
-    } else if (isEven === false && odd.checked ) {
+    if ((isEven(somma) && (even.checked === true)) || (!isEven(somma) && (odd.checked === true)) ) {
         risultatoNumeri.innerHTML = `Il tuo numero è: ${numeroUtente.value}. Il numero del computer è: ${somma - parseInt(numeroUtente.value)}. Hai vinto! La somma dei numeri è: ${somma}`
     } else {
         risultatoNumeri.innerHTML = `Il tuo numero è: ${numeroUtente.value}. Il numero del computer è: ${somma - parseInt(numeroUtente.value)}. Hai perso :( La somma dei numeri è: ${somma}`
